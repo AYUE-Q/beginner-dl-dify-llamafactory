@@ -13,30 +13,31 @@
 
 详细的安装教程: https://zhuanlan.zhihu.com/p/1896552549621936802; 好了,安装完了之后要进行一些简单的配置,主要是下载源和虚拟环境创建的默认路径;
 
-```shell
-# 查看当前配置的镜像源
-conda config --show channels
-# 删除以前所有的镜像源
-conda config --remove-key channels
-# 单独删除
-conda config --remove channels<镜像源地址>
-#添加镜像源(后添加的默认优先级高)
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-```
-配置好了镜像源之后你就可以安装包了
+这里不建议你使用conda命令安装,因为他会安装到大环境里面,理想的做法是你先创建python虚拟环境,然后在虚拟环境中使用pip安装你想要的包
+
+所以主要讲讲如何创建python虚拟环境, 并配置该环境的下载镜像源, 首先你需要检查你的conda安装虚拟环境的路径对不对(cmd或者powershell中运行)
 
 ```shell
-#这里不建议你使用conda命令安装,因为他会安装到大环境里面,理想的做法是你先创建python虚拟环境,然后在虚拟环境中使用pip安装你想要的包
-conda install <你需要安装包的名字>
-#设置虚拟环境安装位置
-conda info  #查看conda信息,如果显示的位置是正常的就不用修改,如果还是在c盘就需要通过以下命令修改
+#查看conda信息,如果显示的位置是正常的就不用修改,如果还是在c盘就需要通过以下命令修改
+conda info  
 #添加虚拟环境安装位置
 conda config --add envs_dirs <这里填你的虚拟环境想要安装的路径>
 #移除默认路径（可选）
 conda config --remove envs_dirs <你想要移除的路径>
 ```
-<img width="1040" height="556" alt="image" src="https://github.com/user-attachments/assets/e781f9bb-c203-425d-a077-c08b6acd1ce3" />
+正常你应该显示如下图所示:
 
+<img width="1151" height="180" alt="image" src="https://github.com/user-attachments/assets/86769d35-c0a3-4d6c-98d2-c54f1e8df093" />
+
+然后就是使用conda创建虚拟环境:
+
+```shell
+conda create -n py39 python=3.9 numpy pandas
+# 上面的命令表示我创建了一个名为py39的python版本为3.9的环境,附加了numpy和pandas包
+conda env list         # 查看所有环境
+conda activate myenv   # 激活环境
+conda deactivate       # 退出环境
+conda remove --name myenv --all  # 删除环境
+```
 ### docker相关
 docker是为了运行dify的,
