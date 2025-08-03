@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能体交互平台 | 阿岳的demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header class="app-header">
+            <h1>阿岳的<span>智能体demo</span></h1>
+            <p>智能认知交互系统</p>
+        </header>
+        
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        
+        <footer class="app-footer">
+            <div class="pulse-dot"></div>
+            <span>系统在线 · 实时响应</span>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/agent.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="agent-container">
+    <div class="response-display" id="agent-response">
+        <div class="welcome-message">
+            <h2>您好，我是智能体阿岳</h2>
+            <p>简洁设计 · 深度思考 · 高效协作</p>
+        </div>
+    </div>
+    
+    <div class="input-group">
+        <input 
+            type="text" 
+            id="user-input" 
+            placeholder="输入您的需求..." 
+            autocomplete="off"
+        >
+        <button id="send-btn" class="glow-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+        </button>
+    </div>
+</div>
+{% endblock %}
