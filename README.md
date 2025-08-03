@@ -132,6 +132,21 @@ LMstudio 模型的下载是从Hugging Face进行下载的, 可以直接在UI界�
 
 后面使用Llama Factory微调时也需要Hugging Face源下载的模型
 
+#### Hugging Face模型下载
+
+在python环境中: 
+
+```shell
+# 下载对应的包
+pip install huggingface_hub
+
+# 如果你要下载 私有模型 或使用高权限 API 访问，需要登录 Hugging Face 账户。
+huggingface-cli login
+
+#下载模型(安装到指定路径)
+huggingface-cli download deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --local-dir D:\LLM\Huggingface_model\deepseek-ai\DeepSeek-R1-Distill-Qwen-1.5B
+```
+
 ## 三、Dify与Docker
 
 ### 什么是Dify?
