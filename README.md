@@ -41,6 +41,20 @@ conda activate py39   # 激活环境
 conda deactivate       # 退出环境
 conda remove -n py39 --all  # 删除环境
 ```
+在指定路径创建虚拟环境,activate时也要输入路径
+```shell
+# 在 D盘的 my_project 文件夹下创建一个名为 venv 的环境，并安装 Python 3.8
+conda create -p D:\my_project\venv python=3.8
+
+# 在 macOS/Linux 的 home 目录下创建一个名为 my_conda_env 的环境
+conda create -p ~/projects/my_app/env python=3.10
+
+# Windows
+conda activate D:\my_project\venv
+
+# macOS/Linux
+conda activate ~/projects/my_app/env
+```
 使用conda activate激活了环境之后你会看到你的命令行左边的括号就显示了你的环境名称, 然后设置当前python环境的镜像源(想在哪个环境就conda activate <环境名>)
 
 ```shell
@@ -60,6 +74,10 @@ pip config list
 
 ```shell
 pip install <包名> 下载包了
+# pip是下载到该环境
+# 还有一种方法是conda install,它是将包下载到conda环境中/pkg
+# 后续你创建新环境再下载相同的包时,他会直接从/pkg中直接调用,不用再次通过源下载
+# conda install主要是常用包的下载, 特定的包通过pip, 注意不要使用conda和pip下载同一个包
 ```
 !!! 注意一定要先激活环境
 
