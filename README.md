@@ -1,3 +1,5 @@
+
+
 # beginner-dl-dify-llamafactory
 面向小白的生成式AI实践入门教程：本地环境部署指南、Dify应用搭建详解、LLaMA Factory模型微调实战。提供开箱即用的配置脚本和中文图文教程，帮助零基础用户快速构建AI应用。
 
@@ -182,7 +184,7 @@ Dify 内置了构建 LLM 应用所需的关键技术，包括：
 
 它的界面长这个样子:
 
-<img width="2549" height="1367" alt="image" src="https://github.com/user-attachments/assets/cc7125d3-0b0b-40af-85f7-ea246ad43d93" />
+<img width="2549" height="1367" alt="image" src="https://github.com/user-attachments/assets/cc712d3-0b0b-40af-85f7-ea246ad43d93" />
 
 ### 什么是Docker?
 
@@ -195,3 +197,10 @@ Docker 是一个开源的容器化平台，用于开发、交付和运行应用�
 首先下载好Docker (https://www.docker.com)
 
 然后根据这个教程 (https://www.runoob.com/w3cnote/dify-ai-intro.html) 进行安装
+
+## 四、本地智能体 Demo 运行（WebAI_ayue）
+仓库内置了基于 Flask 的 Web 交互 Demo，可直接配合 Ollama 或 LM Studio 使用，无需复杂配置：
+1. 在已激活的 Python 虚拟环境中安装依赖：`pip install flask requests`
+2. 打开 `WebAI_ayue/app.py`，将 `ACTIVE_MODEL` 修改为你当前使用的部署方式（`"ollama"` 或 `"lmstudio"`），并按需修改对应的模型名称。
+3. 启动服务：`python WebAI_ayue/app.py`
+4. 浏览器访问 `http://localhost:5000` 即可开始对话。
